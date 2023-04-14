@@ -19,7 +19,7 @@
     "test:format": "prettier --check \"**/*.{md,yml,yaml,json}\" || npm run suggest:format",
     "suggest:format": "echo \"\nTo resolve this, run: $(tput bold)npm run format$(tput sgr0)\" && exit 1",
     "build": "./build.sh",
-    "test:build": "spec-md --metadata spec/metadata.json spec/GraphQL.md > /dev/null",
+    "test:build": "spec-md --metadata spec/metadata.json spec/KnowledgeGraph.md > /dev/null",
     "watch": "nodemon -e json,md --exec \"npm run build\""
   },
   "devDependencies": {

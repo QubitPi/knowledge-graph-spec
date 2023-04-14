@@ -124,17 +124,7 @@ Note: This is an example of a non-normative note.
 
 # [Overview](Section%201%20--%20Overview.md)
 
-# [Language](Section%202%20--%20Language.md)
-
-# [Type System](Section%203%20--%20Type%20System.md)
-
-# [Introspection](Section%204%20--%20Introspection.md)
-
-# [Validation](Section%205%20--%20Validation.md)
-
-# [Execution](Section%206%20--%20Execution.md)
-
-# [Response](Section%207%20--%20Response.md)
+# [Data Structure](Section%202%20--%20Data%20Structure.md)
 
 # [Appendix: Notation Conventions](Appendix%20A%20--%20Notation%20Conventions.md)
 

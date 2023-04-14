@@ -1,6 +1,6 @@
 **This document is a work in progress.**
 
-# GraphQL Specification Style Guide
+# Knowledge Graph Specification Style Guide
 
 This document outlines the styles used in the GraphQL spec to aid editorial and
 consistency. The writing style portions are inspired by the AP style guide. When
