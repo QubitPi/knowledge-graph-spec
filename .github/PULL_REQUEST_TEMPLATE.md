@@ -1,5 +1,19 @@
-!!! IMPORTANT !!!
+## Changelog
 
-Please Read
-https://github.com/QubitPi/knowledge-graph-spec/blob/master/CONTRIBUTING.md
-before creating a Pull Request.
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## Checklist
+
+- [ ] Test
+- [ ] Self-review
+- [ ] Documentation
