@@ -1,36 +1,21 @@
-# GraphQL
+# Knowledge Graph
 
 _Current Working Draft_
 
 **Introduction**
 
-This is the specification for GraphQL, a query language and execution engine
-originally created at Facebook in 2012 for describing the capabilities and
-requirements of data models for client-server applications. The development of
-this open standard started in 2015. This specification was licensed under OWFa
-1.0 in 2017. The [GraphQL Foundation](https://graphql.org/foundation/) was
-formed in 2019 as a neutral focal point for organizations who support the
-GraphQL ecosystem, and the
-[GraphQL Specification Project](https://graphql.org/community/) was established
-also in 2019 as the Joint Development Foundation Projects, LLC, GraphQL Series.
+This is the specification for Knowledge Graph, a standard specification for
+describing the capabilities and requirements of data models for knowledge-graph
+applications. The development of this open standard started in 2023.
 
-If your organization benefits from GraphQL, please consider
-[becoming a member](https://graphql.org/foundation/join/#graphql-foundation) and
-helping us to sustain the activities that support the health of our neutral
-ecosystem.
-
-The GraphQL Specification Project has evolved and may continue to evolve in
-future editions of this specification. Previous editions of the GraphQL
-specification can be found at permalinks that match their
-[release tag](https://github.com/graphql/graphql-spec/releases). The latest
-working draft release can be found at
-[https://spec.graphql.org/draft](https://spec.graphql.org/draft).
+The Knowledge Graph Specification Project has evolved and may continue to evolve
+in future editions of this specification. The latest working draft release can
+be found at
+[https://qubitpi.github.io/knowledge-graph-spec/draft/](https://qubitpi.github.io/knowledge-graph-spec/draft/).
 
 **Copyright Notice**
 
-Copyright © 2015-2018, Facebook, Inc.
-
-Copyright © 2019-present, GraphQL contributors
+Copyright © 2015-2023, Jiaqi Liu.
 
 THESE MATERIALS ARE PROVIDED “AS IS”. The parties expressly disclaim any
 warranties (express, implied, or otherwise), including implied warranties of
@@ -124,17 +109,7 @@ Note: This is an example of a non-normative note.
 
 # [Overview](Section%201%20--%20Overview.md)
 
-# [Language](Section%202%20--%20Language.md)
-
-# [Type System](Section%203%20--%20Type%20System.md)
-
-# [Introspection](Section%204%20--%20Introspection.md)
-
-# [Validation](Section%205%20--%20Validation.md)
-
-# [Execution](Section%206%20--%20Execution.md)
-
-# [Response](Section%207%20--%20Response.md)
+# [Data Structure](Section%202%20--%20Data%20Structure.md)
 
 # [Appendix: Notation Conventions](Appendix%20A%20--%20Notation%20Conventions.md)
 

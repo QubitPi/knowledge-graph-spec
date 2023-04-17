@@ -1,4 +1,19 @@
-!!! IMPORTANT !!!
+## Changelog
 
-Please Read https://github.com/graphql/graphql-spec/blob/master/CONTRIBUTING.md
-before creating a Pull Request.
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## Checklist
+
+- [ ] Test
+- [ ] Self-review
+- [ ] Documentation
