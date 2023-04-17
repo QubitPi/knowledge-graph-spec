@@ -1,5 +1,5 @@
 #!/bin/bash -e
-# This script publishes the GraphQL specification document to the web.
+# This script publishes the Knowledge Graph specification document to the web.
 
 # Determine if this is a tagged release
 GITTAG=$(git tag --points-at HEAD)
@@ -7,20 +7,20 @@ GITTAG=$(git tag --points-at HEAD)
 # Build the specification draft document
 echo "Building spec draft"
 mkdir -p public/draft
-spec-md --metadata spec/metadata.json --githubSource "https://github.com/graphql/graphql-spec/blame/main/" spec/KnowledgeGraph.md > public/draft/index.html
+spec-md --metadata spec/metadata.json --githubSource "https://github.com/QubitPi/knowledge-graph-spec/blame/main/" spec/KnowledgeGraph.md > public/draft/index.html
 
 # If this is a tagged commit, also build the release document
 if [ -n "$GITTAG" ]; then
   echo "Building spec release $GITTAG"
   mkdir -p "public/$GITTAG"
-  spec-md --metadata spec/metadata.json --githubSource "https://github.com/graphql/graphql-spec/blame/$GITTAG/" spec/KnowledgeGraph.md > "public/$GITTAG/index.html"
+  spec-md --metadata spec/metadata.json --githubSource "https://github.com/QubitPi/knowledge-graph-spec/blame/$GITTAG/" spec/KnowledgeGraph.md > "public/$GITTAG/index.html"
 fi
 
 # Create the index file
 echo "Rebuilding: / (index)"
 HTML="<html>
   <head>
-    <title>GraphQL Specification Versions</title>
+    <title>Knowledge Graph Specification Versions</title>
     <style>
       body {
         color: #333333;
@@ -53,7 +53,7 @@ HTML="<html>
     </style>
   </head>
   <body>
-    <h1>GraphQL</h1>
+    <h1>Knowledge Graph</h1>
     <table>"
 
 # Include latest draft
@@ -66,7 +66,7 @@ HTML="$HTML
       <td></td>
     </tr>"
 
-GITHUB_RELEASES="https://github.com/graphql/graphql-spec/releases/tag"
+GITHUB_RELEASES="https://github.com/QubitPi/knowledge-graph-spec/releases/tag"
 for GITTAG in $(git tag -l --sort='-*committerdate') ; do
   VERSIONYEAR=${GITTAG: -4}
   TAGTITLE="${GITTAG%$VERSIONYEAR} $VERSIONYEAR"

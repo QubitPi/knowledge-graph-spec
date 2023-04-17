@@ -2,21 +2,22 @@
 
 # Knowledge Graph Specification Style Guide
 
-This document outlines the styles used in the GraphQL spec to aid editorial and
-consistency. The writing style portions are inspired by the AP style guide. When
-making changes to the GraphQL specification, please aim to be consistent with
-this style guide.
+This document outlines the styles used in the Knowledge Graph spec to aid
+editorial and consistency. The writing style portions are inspired by the AP
+style guide. When making changes to the Knowledge Graph specification, please
+aim to be consistent with this style guide.
 
 ## Auto-Formatting
 
-The GraphQL specification is formatted using the `prettier` tool, so you should
-not need to think about gaps between paragraphs and titles, nor about word
-wrapping - this is handled for you.
+The Knowledge Graph specification is formatted using the `prettier` tool, so you
+should not need to think about gaps between paragraphs and titles, nor about
+word wrapping - this is handled for you.
 
 ## Headings
 
-The GraphQL specification uses two types of headings: numbered headings and
-unnumbered headings. All headings should be written in Title Case (see below).
+The Knowledge Graph specification uses two types of headings: numbered headings
+and unnumbered headings. All headings should be written in Title Case (see
+below).
 
 ### Numbered Headings
 

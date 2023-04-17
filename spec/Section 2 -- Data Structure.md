@@ -6,8 +6,8 @@ lexical grammar which matches patterns of source characters. In this document,
 syntactic grammar productions are distinguished with a colon `:` while lexical
 grammar productions are distinguished with a double-colon `::`.
 
-The source text of a GraphQL document must be a sequence of {SourceCharacter}.
-The character sequence must be described by a sequence of {Token} and {Ignored}
+The source text of a Graph must be a sequence of {SourceCharacter}. The
+character sequence must be described by a sequence of {Token} and {Ignored}
 lexical grammars. The lexical token sequence, omitting {Ignored}, must be
 described by a single {Document} syntactic grammar.
 
@@ -17,12 +17,12 @@ throughout this document.
 
 **Lexical Analysis & Syntactic Parse**
 
-The source text of a GraphQL document is first converted into a sequence of
-lexical tokens, {Token}, and ignored tokens, {Ignored}. The source text is
-scanned from left to right, repeatedly taking the next possible sequence of
-code-points allowed by the lexical grammar productions as the next token. This
-sequence of lexical tokens are then scanned from left to right to produce an
-abstract syntax tree (AST) according to the {Document} syntactical grammar.
+The source text of a Graph is first converted into a sequence of lexical tokens,
+{Token}, and ignored tokens, {Ignored}. The source text is scanned from left to
+right, repeatedly taking the next possible sequence of code-points allowed by
+the lexical grammar productions as the next token. This sequence of lexical
+tokens are then scanned from left to right to produce an abstract syntax tree
+(AST) according to the {Document} syntactical grammar.
 
 Lexical grammar productions in this document use _lookahead restrictions_ to
 remove ambiguity and ensure a single valid lexical analysis. A lexical token is
@@ -42,20 +42,20 @@ match, however some lookahead restrictions include additional constraints.
 
 SourceCharacter :: "Any Unicode scalar value"
 
-GraphQL documents are interpreted from a source text, which is a sequence of
+Graphs are interpreted from a source text, which is a sequence of
 {SourceCharacter}, each {SourceCharacter} being a _Unicode scalar value_ which
 may be any Unicode code point from U+0000 to U+D7FF or U+E000 to U+10FFFF
 (informally referred to as _"characters"_ through most of this specification).
 
-A GraphQL document may be expressed only in the ASCII range to be as widely
-compatible with as many existing tools, languages, and serialization formats as
-possible and avoid display issues in text editors and source control. Non-ASCII
-Unicode scalar values may appear within {StringValue} and {Comment}.
+A Graph may be expressed only in the ASCII range to be as widely compatible with
+as many existing tools, languages, and serialization formats as possible and
+avoid display issues in text editors and source control. Non-ASCII Unicode
+scalar values may appear within {StringValue} and {Comment}.
 
-Note: An implementation which uses _UTF-16_ to represent GraphQL documents in
-memory (for example, JavaScript or Java) may encounter a _surrogate pair_. This
-encodes one _supplementary code point_ and is a single valid source character,
-however an unpaired _surrogate code point_ is not a valid source character.
+Note: An implementation which uses _UTF-16_ to represent Graphs in memory (for
+example, JavaScript or Java) may encounter a _surrogate pair_. This encodes one
+_supplementary code point_ and is a single valid source character, however an
+unpaired _surrogate code point_ is not a valid source character.
 
 ### White Space
 
@@ -67,11 +67,11 @@ WhiteSpace ::
 White space is used to improve legibility of source text and act as separation
 between tokens, and any amount of white space may appear before or after any
 token. White space between tokens is not significant to the semantic meaning of
-a GraphQL Document, however white space characters may appear within a {String}
-or {Comment} token.
+a Graph, however white space characters may appear within a {String} or
+{Comment} token.
 
-Note: GraphQL intentionally does not consider Unicode "Zs" category characters
-as white-space, avoiding misinterpretation by text editors and source control
+Note: Graph intentionally does not consider Unicode "Zs" category characters as
+white-space, avoiding misinterpretation by text editors and source control
 tools.
 
 ### Line Terminators
@@ -84,8 +84,7 @@ LineTerminator ::
 
 Like white space, line terminators are used to improve the legibility of source
 text and separate lexical tokens, any amount may appear before or after any
-other token and have no significance to the semantic meaning of a GraphQL
-Document.
+other token and have no significance to the semantic meaning of a Graph.
 
 Note: Any error reporting which provides the line number in the source of the
 offending syntax should use the preceding amount of {LineTerminator} to produce
@@ -97,8 +96,8 @@ Comment :: `#` CommentChar\* [lookahead != CommentChar]
 
 CommentChar :: SourceCharacter but not LineTerminator
 
-GraphQL source documents may contain single-line comments, starting with the
-{`#`} marker.
+Graph source documents may contain single-line comments, starting with the {`#`}
+marker.
 
 A comment may contain any {SourceCharacter} except {LineTerminator} so a comment
 always consists of all {SourceCharacter} starting with the {`#`} character up to
@@ -106,7 +105,7 @@ but not including the {LineTerminator} (or end of the source).
 
 Comments are {Ignored} like white space and may appear after any token, or
 before a {LineTerminator}, and have no significance to the semantic meaning of a
-GraphQL Document.
+Graph.
 
 ### Insignificant Commas
 
@@ -114,7 +113,7 @@ Comma :: ,
 
 Similar to white space and line terminators, commas ({`,`}) are used to improve
 the legibility of source text and separate lexical tokens but are otherwise
-syntactically and semantically insignificant within GraphQL Documents.
+syntactically and semantically insignificant within Graphs.
 
 Non-significant comma characters ensure that the absence or presence of a comma
 does not meaningfully alter the interpreted syntax of the document, as this can
@@ -132,11 +131,11 @@ Token ::
 - FloatValue
 - StringValue
 
-A GraphQL document is comprised of several kinds of indivisible lexical tokens
-defined here in a lexical grammar by patterns of source Unicode characters.
-Lexical tokens may be separated by {Ignored} tokens.
+A Graph is comprised of several kinds of indivisible lexical tokens defined here
+in a lexical grammar by patterns of source Unicode characters. Lexical tokens
+may be separated by {Ignored} tokens.
 
-Tokens are later used as terminal symbols in GraphQL syntactic grammar rules.
+Tokens are later used as terminal symbols in Graph syntactic grammar rules.
 
 ### Ignored Tokens
 
@@ -173,9 +172,9 @@ and is {Ignored}.
 
 Punctuator :: one of ! $ & ( ) ... : = @ [ ] { | }
 
-GraphQL documents include punctuation in order to describe structure. GraphQL is
-a data description language and not a programming language, therefore GraphQL
-lacks the punctuation often used to describe mathematical expressions.
+Graphs include punctuation in order to describe structure. Graph is a data
+description language and not a programming language, therefore Graph lacks the
+punctuation often used to describe mathematical expressions.
 
 ### Names
 
@@ -205,26 +204,26 @@ Digit :: one of
 
 - `0` `1` `2` `3` `4` `5` `6` `7` `8` `9`
 
-GraphQL Documents are full of named things: operations, fields, arguments,
-types, directives, fragments, and variables. All names must follow the same
-grammatical form.
+Graphs are full of named things: operations, fields, arguments, types,
+directives, fragments, and variables. All names must follow the same grammatical
+form.
 
-Names in GraphQL are case-sensitive. That is to say `name`, `Name`, and `NAME`
-all refer to different names. Underscores are significant, which means
-`other_name` and `othername` are two different names.
+Names in Graph are case-sensitive. That is to say `name`, `Name`, and `NAME` all
+refer to different names. Underscores are significant, which means `other_name`
+and `othername` are two different names.
 
 A {Name} must not be followed by a {NameContinue}. In other words, a {Name}
 token is always the longest possible valid sequence. The source characters
 {`a1`} cannot be interpreted as two tokens since {`a`} is followed by the
 {NameContinue} {`1`}.
 
-Note: Names in GraphQL are limited to the Latin <acronym>ASCII</acronym> subset
-of {SourceCharacter} in order to support interoperation with as many other
-systems as possible.
+Note: Names in Graph are limited to the Latin <acronym>ASCII</acronym> subset of
+{SourceCharacter} in order to support interoperation with as many other systems
+as possible.
 
 **Reserved Names**
 
-Any {Name} within a GraphQL type system must not start with two underscores
+Any {Name} within a Graph type system must not start with two underscores
 {"\_\_"} unless it is part of the [introspection system](#sec-Introspection) as
 defined by this specification.
 
@@ -249,9 +248,7 @@ these vertices for an undirected graph or a set of ordered pairs for a directed
 graph. These pairs are known as _edges_ (also called _links_), and for a
 directed graph are also known as _edges_ but also sometimes _arrows_ or _arcs_.
 
-A graph contains multiple definitions, either nodes or links
-
-Graphs are only valid if
+A graph contains 2 definitions, nodes and/or links. Graphs are only valid if
 
 1. both nodes and links are present
 2. only nodes are present
@@ -271,46 +268,33 @@ Links : Link+
 
 Link : a JSON object
 
-The JSON that defines a knowledge graph is the following:
+An example JSON that defines a knowledge graph is the following:
 
 ```json
 {
-    "nodes": [
-        {
-            "id": "understanding-people",
-            "fields":{
-                "name": "Understanding People",
-                "description": "",
-                "url": "https://www.skillsyouneed.com/ips/understanding-others.html"
-            }
-        },
-        {
-            "id": "face-and-voice",
-            "fields":{
-                "name": "Face and Voice",
-                "description": "",
-                "url": "https://www.skillsyouneed.com/ips/nonverbal-face-voice.html"
-            }
-        }
-        ...
-    ],
-    "links": [
-        {
-            "source": "understanding-people",
-            "target": "face-and-voice"
-        },
-        ...
-    ]
+  "nodes": [
+    {
+      "id": "understanding-people",
+      "fields": {
+        "name": "Understanding People",
+        "description": "",
+        "url": "https://www.skillsyouneed.com/ips/understanding-others.html"
+      }
+    },
+    {
+      "id": "face-and-voice",
+      "fields": {
+        "name": "Face and Voice",
+        "description": "",
+        "url": "https://www.skillsyouneed.com/ips/nonverbal-face-voice.html"
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "understanding-people",
+      "target": "face-and-voice"
+    }
+  ]
 }
 ```
-
-There is the rationale:
-
-The basic structure is a combination of
-
-1. https://github.com/vasturiano/react-force-graph#input-json-syntax
-2. Neo4J JSON import format
-
-We want our data structure to be general enough.
-
-The "fields" comes from the GraphQL fields

@@ -5,13 +5,13 @@ In
 knowledge graph is a
 [knowledge base](https://en.wikipedia.org/wiki/Knowledge_base) that uses a
 graph-structured data model or topology to integrate data. Knowledge graphs are
-often used to store interlinked descriptions of entities – objects, events,
+often used to store interlinked descriptions of entities - objects, events,
 situations or abstract concepts - while also encoding the semantics underlying
 the used terminology.
 
-For example, this knowledge graph represents
+For example, this knowledge graph
 
-![Error loading example-conceptual-diagram.png](https://en.wikipedia.org/wiki/File:Conceptual_Diagram_-_Example.svg)
+![Error loading example-conceptual-diagram.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Conceptual_Diagram_-_Example.svg/1218px-Conceptual_Diagram_-_Example.svg.png)
 
 is represented using the following JSON:
 
