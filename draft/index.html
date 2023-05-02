@@ -98,6 +98,13 @@ This is an example of a non-normative note.</div>
 <li><a href="#sec-Links"><span class="spec-secid">2.4</span>Links</a></li>
 </ol>
 </li>
+<li><a href="#sec-Execution"><span class="spec-secid">3</span>Execution</a><ol>
+<li><a href="#sec-Executing-Links"><span class="spec-secid">3.1</span>Executing Links</a><ol>
+<li><a href="#sec-Handling-Node-ID-Errors"><span class="spec-secid">3.1.1</span>Handling Node ID Errors</a></li>
+</ol>
+</li>
+</ol>
+</li>
 <li><a href="#sec-Appendix-Notation-Conventions"><span class="spec-secid">A</span>Appendix: Notation Conventions</a><ol>
 <li><a href="#sec-Context-Free-Grammar"><span class="spec-secid">A.1</span>Context-Free Grammar</a></li>
 <li><a href="#sec-Lexical-and-Syntactical-Grammar"><span class="spec-secid">A.2</span>Lexical and Syntactical Grammar</a></li>
@@ -431,6 +438,21 @@ Names in Graph are limited to the Latin <acronym>ASCII</acronym> subset of <span
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
+</section>
+</section>
+<section id="sec-Execution" secid="3">
+<h1 data-source="spec/Section%203%20--%20Execution.md#L1"><span class="spec-secid" title="link to this section"><a href="#sec-Execution">3</a></span>Execution</h1>
+<p data-source="spec/Section%203%20--%20Execution.md#L3-L4">A Knowledge Graph library or service transforms or operates on a Knowledge Graph Spec via execution.</p>
+<div id="note-88fa8" class="spec-note" data-source="spec/Section%203%20--%20Execution.md#L6-L8">
+<a href="#note-88fa8">Note</a>
+The Knowledge Graph Spec do not require any specific serialization format or transport mechanism. Message serialization and transport mechanisms should be chosen by the implementing library or service.</div>
+<section id="sec-Executing-Links" secid="3.1">
+<h2 data-source="spec/Section%203%20--%20Execution.md#L10"><span class="spec-secid" title="link to this section"><a href="#sec-Executing-Links">3.1</a></span>Executing Links</h2>
+<section id="sec-Handling-Node-ID-Errors" secid="3.1.1">
+<h3 data-source="spec/Section%203%20--%20Execution.md#L12"><span class="spec-secid" title="link to this section"><a href="#sec-Handling-Node-ID-Errors">3.1.1</a></span>Handling Node ID Errors</h3>
+<p data-source="spec/Section%203%20--%20Execution.md#L14-L15">A <em>node ID error</em> is an error raised from a particular link during execution. These errors should be reported at runtime.</p>
+<p data-source="spec/Section%203%20--%20Execution.md#L17-L19">If a node ID (either source or target) is not found, a runtime error should be reported. </p>
+</section>
 </section>
 </section>
 <section id="sec-Appendix-Notation-Conventions" secid="A">
@@ -799,6 +821,17 @@ Written in <a href="https://spec-md.com" target="_blank">Spec Markdown</a>.</foo
 <li id="_sidebar_2.2"><a href="#sec-Graph"><span class="spec-secid">2.2</span>Graph</a></li>
 <li id="_sidebar_2.3"><a href="#sec-Nodes"><span class="spec-secid">2.3</span>Nodes</a></li>
 <li id="_sidebar_2.4"><a href="#sec-Links"><span class="spec-secid">2.4</span>Links</a></li>
+</ol>
+</li>
+<li id="_sidebar_3"><a href="#sec-Execution"><span class="spec-secid">3</span>Execution</a>
+<input hidden class="toggle" type="checkbox" id="_toggle_3" /><label for="_toggle_3"></label>
+<ol>
+<li id="_sidebar_3.1"><a href="#sec-Executing-Links"><span class="spec-secid">3.1</span>Executing Links</a>
+<input hidden class="toggle" type="checkbox" id="_toggle_3.1" /><label for="_toggle_3.1"></label>
+<ol>
+<li id="_sidebar_3.1.1"><a href="#sec-Handling-Node-ID-Errors"><span class="spec-secid">3.1.1</span>Handling Node ID Errors</a></li>
+</ol>
+</li>
 </ol>
 </li>
 <li id="_sidebar_A"><a href="#sec-Appendix-Notation-Conventions"><span class="spec-secid">A</span>Appendix: Notation Conventions</a>
